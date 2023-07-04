@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+		<!-- #masthead -->
+				{% block content %}
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column full">
+				<main id="main" class="site-main">
+				<div class="grid portfoliogrid">
+				{% for x in Producto %}
+					<article class="hentry">
+					<header class="entry-header">
+					<div class="entry-thumbnail">
+						
+						<a href="/{{ x.link }}/"><img src="{{ x.imagen.url }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/></a>
+						
+					</div>
+					<h2 class="entry-title"><a rel="bookmark">{{ x.nombremo }}</a></h2>
+					<a class='portfoliotype' href='#'>{{ x.categorias }}</a>
+					</header>
+					</article>
+					{% endfor %}
+				
+				</div>
+				<!-- .grid -->
+				
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+		{% endblock %}
+	

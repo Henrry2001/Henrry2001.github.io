@@ -1,0 +1,33 @@
+{% extends "ropabase.html" %}
+{% load static %}
+		<!-- #masthead -->
+		{% block content %}
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column full">
+				<main id="main" class="site-main" role="main">
+					<div class="grid portfoliogrid">
+
+{% for n in tendencia %}
+					<article class="hentry">
+					<header class="entry-header">
+					<div class="entry-thumbnail">
+					<a href="#">
+					<img src="{{ n.imagen.url }}" alt="">
+					<h2 class="entry-title">{{ n.nombre }}</h2>
+					<span class="entry-title"><span class="amount">${{ n.marca }}</span></span>
+					<span class="entry-title"><span class="amount">${{ n.modelo }}</span></span><br>
+					<span class="entry-title"><span class="amount">${{ n.precio }}</span></span>
+					<br>
+				</div>
+					</header>
+				</article>
+{% endfor %}
+
+			</div>
+				</main>
+				<!-- #main -->
+					</div>
+			<!-- #primary -->
+		</div>
+		<!-- #content -->
+{% endblock %}
